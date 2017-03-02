@@ -4,7 +4,7 @@
         // console配置内容,内容为空请填写 如：freshTec: "%c%c",
         configs: {
             // 招聘信息：统一固定的输出
-            staff: "%cBuilt%c by AOTU Labs（Aotu.io） %cbasing on Hexo.\n\nJoin us at %caotu@jd.com%c.\n\n",
+            staff: "%cBuilt%c by 李经纶 Labs（lijinglun.com） %cbasing on Hexo.\n\nContact me at %c281965992@qq.com%c.\n\n",
             // 页面用到的技术：在这个页面，我们用了%cXXX，YYY，%c你发现了吗？\n\n
             freshTec: "%c%c",
             // 趣味体验：另外，尝试%cXXX，%c会有惊喜哦~\n\n
