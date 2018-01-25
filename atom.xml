@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chinalijinglun.github.io/"/>
-  <updated>2017-08-10T11:21:55.000Z</updated>
+  <updated>2018-01-24T10:03:37.354Z</updated>
   <id>https://chinalijinglun.github.io/</id>
   
   <author>
@@ -16,11 +16,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>新年新展望</title>
+    <link href="https://chinalijinglun.github.io/2018/01/15/%E6%96%B0%E5%B9%B4%E6%96%B0%E5%B1%95%E6%9C%9B/"/>
+    <id>https://chinalijinglun.github.io/2018/01/15/新年新展望/</id>
+    <published>2018-01-15T07:12:32.000Z</published>
+    <updated>2018-01-24T10:03:37.354Z</updated>
+    
+    <content type="html"><![CDATA[<p>“又是一年芳草绿,春风十里杏花香”<br>总结一下去年的自己，去年自己算是挺圆满的了，结了个婚，换了份工作，虽然不是什么大人物，但是小人物也有小人物的幸福，挺知足的。<br>去年自己成功的把vueJs引入上家公司，并完成了前后端的完全分离，极大的解放了生产力和提高了效率，并使得公司绝大部分人都学习了vue及nodejs，<br>并使用vue开发了3、4个大型的项目，对vue也算是从熟悉到理解，并能够把element-ui中的组件重写或者更改；项目中也使用了很多ES6的语法，对<br>ES6也算是很熟悉了吧。看了将近20本左右的书籍，其中文学读物（金庸、古龙、梁羽生、四大名著、<del>网络小说</del>）占比一半，技术书籍（js、python、nodejs、css）占一半，总体来说，看书的收获还是挺大的，希望自己有一天也能出书。</p><p><img src="1.jpeg" width="500px"></p><p>又是一年的开始，做个今年的计划吧！<br>1、写完自己的vueUI组件，传说中的Lui，哈哈<br>2、写go程序或者python，毕竟很久没写了<br>3、写一款自己的小游戏<br>4、精通typescript<br>5、看完10左右的技术书籍</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;“又是一年芳草绿,春风十里杏花香”&lt;br&gt;总结一下去年的自己，去年自己算是挺圆满的了，结了个婚，换了份工作，虽然不是什么大人物，但是小人物也有小人物的幸福，挺知足的。&lt;br&gt;去年自己成功的把vueJs引入上家公司，并完成了前后端的完全分离，极大的解放了生产力和提高了效率，并
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://chinalijinglun.github.io/cates/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="https://chinalijinglun.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>canvas压缩图片</title>
     <link href="https://chinalijinglun.github.io/2017/08/06/canvas%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/"/>
     <id>https://chinalijinglun.github.io/2017/08/06/canvas压缩图片/</id>
     <published>2017-08-06T10:45:41.000Z</published>
-    <updated>2017-08-10T11:21:55.000Z</updated>
+    <updated>2018-01-15T08:14:02.609Z</updated>
     
     <content type="html"><![CDATA[<p>最近遇到了图片压缩的问题，想在前端控制一下，所以有了一下代码。<br><a id="more"></a><br>一.canvas.toDataURL()</p><p>具体使用方法为：canvas.toDataURL(type,encoderOptions)</p><p>第一个参数type为，支持的类型，默认为images/png，第二个参数是质量，默认为0.92</p><ul><li>注意事项：<ul><li>1、图片跨域问题</li><li>2、画布高度为0，会返回字符串”data:,”</li><li>3、图片类型，如：image/png、image/jpeg、image/webp</li><li>4、图片质量如为默认，则小心压缩的图片质量很有可能比原有大，如我上传一张120kb的图片，压缩后很有可能为140kb，base64会增加一部分。</li></ul></li></ul><p>简单示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fullQuality = canvas.toDataURL(<span class="string">"image/jpeg"</span>, <span class="number">1.0</span>);</div><div class="line"><span class="comment">// data:image/jpeg;base64,/9j/4AAQSkZJRgABAQ...9oADAMBAAIRAxEAPwD/AD/6AP/Z"</span></div><div class="line"><span class="keyword">var</span> mediumQuality = canvas.toDataURL(<span class="string">"image/jpeg"</span>, <span class="number">0.5</span>);</div><div class="line"><span class="keyword">var</span> lowQuality = canvas.toDataURL(<span class="string">"image/jpeg"</span>, <span class="number">0.1</span>);</div></pre></td></tr></table></figure></p><p>完整代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;&quot; alt=&quot;&quot; id=&quot;img&quot;  crossorigin=&quot;anonymous&quot;&gt;</div></pre></td></tr></table></figure></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawImg</span>(<span class="params">path, callback</span>) </span>&#123;</div><div class="line">                <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</div><div class="line">                img.src = path;</div><div class="line">                img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    <span class="comment">//默认按比例压缩    </span></div><div class="line">                    <span class="keyword">var</span> w = <span class="keyword">this</span>.width,</div><div class="line">                        h = <span class="keyword">this</span>.height;</div><div class="line">                    <span class="keyword">var</span> quality = <span class="number">0.75</span>; <span class="comment">// 默认图片质量为0.7    </span></div><div class="line"></div><div class="line">                    <span class="comment">//生成canvas    </span></div><div class="line">                    <span class="keyword">var</span> canvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>);</div><div class="line">                    <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line"></div><div class="line">                    <span class="comment">// 创建属性节点    </span></div><div class="line">                    canvas.setAttribute(<span class="string">"width"</span>, w);</div><div class="line">                    canvas.setAttribute(<span class="string">"height"</span>, h);</div><div class="line"></div><div class="line">                    ctx.drawImage(<span class="keyword">this</span>, <span class="number">0</span>, <span class="number">0</span>, w, h);</div><div class="line">                    <span class="comment">// quality值越小，所绘制出的图像越模糊    </span></div><div class="line">                    <span class="keyword">var</span> base64 = canvas.toDataURL(<span class="string">'image/jpeg'</span>, quality);</div><div class="line">                    <span class="built_in">console</span>.log(<span class="string">"压缩后的质量："</span>+ base64.length / <span class="number">1024</span> * quality);</div><div class="line">                    <span class="comment">// 回调函数返回base64的值    </span></div><div class="line">                    callback(base64);</div><div class="line">                &#125;;</div><div class="line"></div><div class="line">            &#125;;</div><div class="line"></div><div class="line">            drawImg(<span class="string">"xinghaivps.png"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">base</span>) </span>&#123;</div><div class="line">                <span class="comment">//直接将获取到的base64的字符串，放到一个image标签中就可看到测试后的压缩之后的样式图了  </span></div><div class="line">                <span class="built_in">document</span>.getElementById(<span class="string">"img"</span>).src = base;</div><div class="line">            &#125;)</div></pre></td></tr></table></figure><p>二、canvas.drewImage()</p><p>完整代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=&quot;myCanvas&quot;&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">render</span>(<span class="params">src,size</span>) </span>&#123;</div><div class="line">               <span class="comment">// 创建一个 Image 对象  </span></div><div class="line">               <span class="keyword">var</span> image = <span class="keyword">new</span> Image();</div><div class="line">               <span class="comment">// 参数，最大高度  </span></div><div class="line">               <span class="comment">// 绑定 load 事件处理器，加载完成后执行  </span></div><div class="line">               image.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                   <span class="comment">// 获取 canvas DOM 对象  </span></div><div class="line">                   <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</div><div class="line">                   <span class="comment">// 如果高度超标  </span></div><div class="line">                   <span class="keyword">if</span> (image.height &gt; size) &#123;</div><div class="line">                       <span class="comment">// 宽度等比例缩放 *=  </span></div><div class="line">                       image.width *= size / image.height;</div><div class="line">                       image.height = size;</div><div class="line">                   &#125;</div><div class="line">                   <span class="comment">// 获取 canvas的 2d 环境对象,  </span></div><div class="line">                   <span class="comment">// 可以理解Context是管理员，canvas是房子  </span></div><div class="line">                   <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</div><div class="line">                   <span class="comment">// canvas清屏  </span></div><div class="line">                   ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height);</div><div class="line">                   <span class="comment">// 重置canvas宽高  </span></div><div class="line">                   canvas.width = image.width;</div><div class="line">                   canvas.height = image.height;</div><div class="line">                   <span class="comment">// 将图像绘制到canvas上  </span></div><div class="line">                   ctx.drawImage(image, <span class="number">0</span>, <span class="number">0</span>, image.width, image.height);</div><div class="line">                   <span class="comment">// !!! 注意，image 没有加入到 dom之中  </span></div><div class="line">               &#125;;</div><div class="line">               <span class="comment">// 设置src属性，浏览器会自动加载。  </span></div><div class="line">               <span class="comment">// 记住必须先绑定事件，才能设置src属性，否则会出同步问题。  </span></div><div class="line">               image.src = src;</div><div class="line">           &#125;;</div><div class="line"></div><div class="line">           render(<span class="string">'mei.jpg'</span>,<span class="number">1500</span>)</div></pre></td></tr></table></figure><p>参考：</p><ul><li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toDataURL" target="_blank" rel="external">MDN-HTMLCanvasElement-toDataURL</a></li><li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/drawImage" target="_blank" rel="external">MDN-CanvasRenderingContext2D</a></li></ul>]]></content>
     
@@ -30,12 +52,12 @@
     
     </summary>
     
-      <category term="web开发" scheme="https://chinalijinglun.github.io/cates/web%E5%BC%80%E5%8F%91/"/>
+      <category term="Web开发" scheme="https://chinalijinglun.github.io/cates/Web%E5%BC%80%E5%8F%91/"/>
     
+    
+      <category term="Web开发" scheme="https://chinalijinglun.github.io/tags/Web%E5%BC%80%E5%8F%91/"/>
     
       <category term="canvas" scheme="https://chinalijinglun.github.io/tags/canvas/"/>
-    
-      <category term="web开发" scheme="https://chinalijinglun.github.io/tags/web%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -44,14 +66,14 @@
     <link href="https://chinalijinglun.github.io/2017/07/24/chrome_1/"/>
     <id>https://chinalijinglun.github.io/2017/07/24/chrome_1/</id>
     <published>2017-07-24T09:52:37.000Z</published>
-    <updated>2017-07-25T08:58:55.000Z</updated>
+    <updated>2018-01-24T09:09:18.388Z</updated>
     
-    <content type="html"><![CDATA[<p>chrome下调试小技巧（一）</p>]]></content>
+    <content type="html"><![CDATA[<p>chrome下调试小技巧（一）</p><h2 id="1、快速格式化线上压缩的js和css"><a href="#1、快速格式化线上压缩的js和css" class="headerlink" title="1、快速格式化线上压缩的js和css"></a>1、快速格式化线上压缩的js和css</h2><p>我们通常看线上的js或者css都是这样的</p><p><img src="1.png" alt="css"><br><img src="3.png" alt="css"><br>通过在sources下的{}，点击即可格式化代码很方便<br><img src="5.png" alt="css"><br><img src="2.png" alt="css"><br><img src="4.png" alt="css"></p><h2 id="2、在浏览器中储存你的代码段"><a href="#2、在浏览器中储存你的代码段" class="headerlink" title="2、在浏览器中储存你的代码段"></a>2、在浏览器中储存你的代码段</h2><p>其实chrome中也是可以储存我们自己的代码的，如果不想每次都粘贴在控制台中或者临时想写些什么，那么sources中的Sinppets将是你的一个很好的选择，<br>Sinppets中你可以新建很多个不同的代码段，跟文本一样，可以写一些文字或者代码，可以command+s保存，如果你写的是js代码一类的，可以直接右键你的Sinppets<br>文件名称，点击Run，即可执行你的代码，也可以右键文件Save as保存文件到本地。<br><img src="6.png" alt="css"></p><h2 id="3、快速定位到指定的文件或者文件中的方法"><a href="#3、快速定位到指定的文件或者文件中的方法" class="headerlink" title="3、快速定位到指定的文件或者文件中的方法"></a>3、快速定位到指定的文件或者文件中的方法</h2><p>ctrl+p 项目中定位文件，以下查找VueJS库文件：<br><img src="1.gif" alt="css"><br>ctrl+shif+o 文件中定位成员函数，以下定位到VueJS的nextTick接口：<br><img src="2.gif" alt="css"></p><p>暂且写这么多，network及短点什么的，估计大家都会用了，就不介绍了。</p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;chrome下调试小技巧（一）&lt;/p&gt;
-
+&lt;h2 id=&quot;1、快速格式化线上压缩的js和css&quot;&gt;&lt;a href=&quot;#1、快速格式化线上压缩的js和css&quot; class=&quot;headerlink&quot; title=&quot;1、快速格式化线上压缩的js和css&quot;&gt;&lt;/a&gt;1、快速格式化线上
     
     </summary>
     
