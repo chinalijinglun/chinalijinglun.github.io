@@ -1,1 +1,69 @@
-"use strict";!function(t){if(App.pager){({getBaseUrl:function(){var t="";return App.isHome?t=App.pager.dirIndex+"/":App.isCate?t=App.pager.dirCate+"/":App.isTag&&(t=App.pager.dirTag+"/"),t=App.root+App.pager.dir+"/"+t},getOffset:function(){var e=t("#sidebar"),a="none"===e.css("float"),p=t("#footer").outerHeight(!0)+50;return a&&(p+=e.outerHeight(!0)),p},init:function(){var e=this.getBaseUrl(),a=this.getOffset(),p=t("#spinnerPager"),i=t("#posts");t(window).scrollPager({heightOffset:a,url:function(t){return e+t.p+"/"},showLoading:function(){p.addClass("active")},hideLoading:function(){p.removeClass("active")},afterLoad:function(t,e){i.append(e)},pageData:{p:1,ps:App.pager.size,total:App.pager.total},ajaxOpts:{cache:!1,type:"GET",contentType:!1,dataType:"html",stringifyData:!1}})}}).init()}}(jQuery);
+/* global App */
+'use strict';
+(function($){
+
+    if(!App.pager) return;
+
+    var pager = {
+        getBaseUrl: function() {
+            var base = '';
+            if(App.isHome) {
+                base = App.pager.dirIndex + '/';
+            } else if (App.isCate) {
+                base = App.pager.dirCate + '/';
+            } else if (App.isTag) {
+                base = App.pager.dirTag + '/';
+            }
+
+            base = App.root + App.pager.dir + '/' + base;
+            return base;
+        },
+        getOffset: function() {
+            var $sidebar = $('#sidebar');
+            var sidebarInFooter = $sidebar.css('float') === 'none';
+            var off = $('#footer').outerHeight(true) + 50;
+            if(sidebarInFooter) {
+                off += $sidebar.outerHeight(true);
+            }
+            return off;
+        },
+        init: function() {
+            var base = this.getBaseUrl();
+            var offset = this.getOffset();
+            var $spinner = $('#spinnerPager');
+            var $posts = $('#posts');
+            $(window).scrollPager({
+                heightOffset: offset,
+                url: function(pagerData) {
+                    return (base + pagerData.p +'/');
+                },
+                showLoading: function () {
+                    $spinner.addClass('active');
+                },
+                hideLoading: function () {
+                    $spinner.removeClass('active')
+                },
+                afterLoad: function (isOK, data) {
+                    $posts.append(data);
+                },
+                pageData: {
+                    p: 1,
+                    ps: App.pager.size,
+                    total: App.pager.total
+                },
+                ajaxOpts: {
+                    cache: false,
+                    type: 'GET',
+                    contentType: false,
+                    dataType: 'html',
+                    stringifyData: false
+                }
+            }); 
+        }
+    };
+
+    
+    pager.init();
+    
+
+})(jQuery);

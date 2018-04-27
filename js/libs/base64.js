@@ -1,1 +1,171 @@
-var Base64=function(){"use strict";var r="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",t=function(r){var t,e,n="";for(r=r.replace(/\r\n/g,"\n"),e=0;e<r.length;e++)t=r.charCodeAt(e),t<128?n+=String.fromCharCode(t):t>127&&t<2048?(n+=String.fromCharCode(t>>6|192),n+=String.fromCharCode(63&t|128)):(n+=String.fromCharCode(t>>12|224),n+=String.fromCharCode(t>>6&63|128),n+=String.fromCharCode(63&t|128));return n},e=function(r){for(var t="",e=0,n=0,o=0,a=0;e<r.length;)n=r.charCodeAt(e),n<128?(t+=String.fromCharCode(n),e++):n>191&&n<224?(o=r.charCodeAt(e+1),t+=String.fromCharCode((31&n)<<6|63&o),e+=2):(o=r.charCodeAt(e+1),a=r.charCodeAt(e+2),t+=String.fromCharCode((15&n)<<12|(63&o)<<6|63&a),e+=3);return t},n=function(r){var t,e="";for(t=0;t<r.length;t++)e+=r.charCodeAt(t).toString(16);return e},o=function(r){var t,e="";for(r.length%2>0&&(r="0"+r),t=0;t<r.length;t+=2)e+=String.fromCharCode(parseInt(r.charAt(t)+r.charAt(t+1),16));return e},a=function(e){var n,o,a,h,c,C,d,f="",i=0;for(e=t(e);i<e.length;)n=e.charCodeAt(i++),o=e.charCodeAt(i++),a=e.charCodeAt(i++),h=n>>2,c=(3&n)<<4|o>>4,C=(15&o)<<2|a>>6,d=63&a,isNaN(o)?C=d=64:isNaN(a)&&(d=64),f+=r.charAt(h),f+=r.charAt(c),f+=r.charAt(C),f+=r.charAt(d);return f},h=function(t){var n,o,a,h,c,C,d,f="",i=0;for(t=t.replace(/[^A-Za-z0-9\+\/\=]/g,"");i<t.length;)h=r.indexOf(t.charAt(i++)),c=r.indexOf(t.charAt(i++)),C=r.indexOf(t.charAt(i++)),d=r.indexOf(t.charAt(i++)),n=h<<2|c>>4,o=(15&c)<<4|C>>2,a=(3&C)<<6|d,f+=String.fromCharCode(n),64!==C&&(f+=String.fromCharCode(o)),64!==d&&(f+=String.fromCharCode(a));return e(f)};return{encode:a,decode:h,decodeToHex:function(r){return n(h(r))},encodeFromHex:function(r){return a(o(r))}}}();
+/* Base64 toolkit */
+var Base64 = (function() {
+    "use strict";
+
+    var _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+    var _utf8_encode = function (string) {
+
+        var utftext = "", c, n;
+
+        string = string.replace(/\r\n/g,"\n");
+
+        for (n = 0; n < string.length; n++) {
+
+            c = string.charCodeAt(n);
+
+            if (c < 128) {
+
+                utftext += String.fromCharCode(c);
+
+            } else if((c > 127) && (c < 2048)) {
+
+                utftext += String.fromCharCode((c >> 6) | 192);
+                utftext += String.fromCharCode((c & 63) | 128);
+
+            } else {
+
+                utftext += String.fromCharCode((c >> 12) | 224);
+                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                utftext += String.fromCharCode((c & 63) | 128);
+
+            }
+
+        }
+
+        return utftext;
+    };
+
+    var _utf8_decode = function (utftext) {
+        var string = "", i = 0, c = 0, c1 = 0, c2 = 0;
+
+        while ( i < utftext.length ) {
+
+            c = utftext.charCodeAt(i);
+
+            if (c < 128) {
+
+                string += String.fromCharCode(c);
+                i++;
+
+            } else if((c > 191) && (c < 224)) {
+
+                c1 = utftext.charCodeAt(i+1);
+                string += String.fromCharCode(((c & 31) << 6) | (c1 & 63));
+                i += 2;
+
+            } else {
+
+                c1 = utftext.charCodeAt(i+1);
+                c2 = utftext.charCodeAt(i+2);
+                string += String.fromCharCode(((c & 15) << 12) | ((c1 & 63) << 6) | (c2 & 63));
+                i += 3;
+
+            }
+
+        }
+
+        return string;
+    };
+
+    var _hexEncode = function(input) {
+        var output = '', i;
+
+        for(i = 0; i < input.length; i++) {
+            output += input.charCodeAt(i).toString(16);
+        }
+
+        return output;
+    };
+
+    var _hexDecode = function(input) {
+        var output = '', i;
+
+        if(input.length % 2 > 0) {
+            input = '0' + input;
+        }
+
+        for(i = 0; i < input.length; i = i + 2) {
+            output += String.fromCharCode(parseInt(input.charAt(i) + input.charAt(i + 1), 16));
+        }
+
+        return output;
+    };
+
+    var encode = function (input) {
+        var output = "", chr1, chr2, chr3, enc1, enc2, enc3, enc4, i = 0;
+
+        input = _utf8_encode(input);
+
+        while (i < input.length) {
+
+            chr1 = input.charCodeAt(i++);
+            chr2 = input.charCodeAt(i++);
+            chr3 = input.charCodeAt(i++);
+
+            enc1 = chr1 >> 2;
+            enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+            enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+            enc4 = chr3 & 63;
+
+            if (isNaN(chr2)) {
+                enc3 = enc4 = 64;
+            } else if (isNaN(chr3)) {
+                enc4 = 64;
+            }
+
+            output += _keyStr.charAt(enc1);
+            output += _keyStr.charAt(enc2);
+            output += _keyStr.charAt(enc3);
+            output += _keyStr.charAt(enc4);
+
+        }
+
+        return output;
+    };
+
+    var decode = function (input) {
+        var output = "", chr1, chr2, chr3, enc1, enc2, enc3, enc4, i = 0;
+
+        input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+        while (i < input.length) {
+
+            enc1 = _keyStr.indexOf(input.charAt(i++));
+            enc2 = _keyStr.indexOf(input.charAt(i++));
+            enc3 = _keyStr.indexOf(input.charAt(i++));
+            enc4 = _keyStr.indexOf(input.charAt(i++));
+
+            chr1 = (enc1 << 2) | (enc2 >> 4);
+            chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+            chr3 = ((enc3 & 3) << 6) | enc4;
+
+            output += String.fromCharCode(chr1);
+
+            if (enc3 !== 64) {
+                output += String.fromCharCode(chr2);
+            }
+            if (enc4 !== 64) {
+                output += String.fromCharCode(chr3);
+            }
+
+        }
+
+        return _utf8_decode(output);
+    };
+
+    var decodeToHex = function(input) {
+        return _hexEncode(decode(input));
+    };
+
+    var encodeFromHex = function(input) {
+        return encode(_hexDecode(input));
+    };
+
+    return {
+        'encode': encode,
+        'decode': decode,
+        'decodeToHex': decodeToHex,
+        'encodeFromHex': encodeFromHex
+    };
+}());
