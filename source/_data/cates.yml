@@ -1,0 +1,30 @@
+- text: 全部文章
+  value: 全部文章 
+  url: index.html
+- text: Web开发
+  value: Web开发
+  url: cates/Web开发/index.html
+- text: 移动开发
+  value: 移动开发
+  url: cates/移动开发/index.html
+- text: 随笔
+  value: 随笔
+  url: cates/随笔/index.html
+- text: 游戏开发
+  value: 游戏
+  url: cates/游戏开发/index.html
+- text: 性能优化
+  value: 性能优化
+  url: cates/性能优化/index.html
+- text: react开发
+  value: react开发
+  url: cates/react开发/index.html
+# - text: 体验报告
+#   value: 体验报告
+#   url: cates/体验报告/index.html
+# - text: 资源合集
+#   value: 资源合集
+#   url: cates/资源合集/index.html
+# - text: 生活玩乐
+#   value: 生活玩乐
+#   url: cates/生活玩乐/index.html

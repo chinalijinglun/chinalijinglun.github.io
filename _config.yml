@@ -1,0 +1,171 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 李经纶HEXO博客
+subtitle: 李经纶HEXO博客
+slogan: use your imagination, Bitch.
+keywords: 李经纶, Javascript, 前端开发, NODEJS开发, CSS3, HTML
+description: 您好，我是李经纶，这是我个人博客，用来记录我的一些学习跟成长的过程。分享一些包括但不限于交互、页面制作、前端开发等方面的知识。
+author: 李经纶
+language: zh-cn
+timezone: Asia/Shanghai
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://chinalijinglun.github.io/
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: notes
+category_dir: cates
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+  - 'demo/**'
+
+# Writing
+new_post_name: :year-:month-:day-:title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 24
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: lattice 
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repository: git@github.com:chinalijinglun/chinalijinglun.github.io.git
+  branch: master
+
+# generator-index首页默认10篇文章标题 如果值为0不分页
+index_generator:
+  per_page: 24
+  order_by: -date
+
+# tag generator标签分类页面默认10篇文章
+## https://github.com/hexojs/hexo-generator-tag
+tag_generator:
+  per_page: 24
+
+# fragments generator
+## https://github.com/mamboer/hexo-generator-fragments
+fragments_generator:
+  dir: fragments
+  per_page: 24
+  index_dir: index
+
+# Feeds
+## https://www.npmjs.com/package/hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: false
+
+# Json Feeds
+## https://github.com/alexbruno/hexo-generator-json-feed
+jsonFeed:
+  limit: 30
+
+#stylus
+stylus:
+  compress: false
+  sourcemaps:
+  
+
+# lunr
+lunr:
+  field: all
+  path: assets/lunr/
+
+# O2 Theme Customation
+logo_url: img/o2logo.png
+
+# Social
+github:
+  user: chinalijinglun
+  repo: chinalijinglun.github.io
+
+# filter_cleanup
+hfc_useref:
+  enable: true
+  concat: true
+
+hfc_html:
+  enable: true
+
+hfc_css:
+  enable: true
+  exclude: 
+    - '*.min.css'
+
+hfc_js:
+  enable: true
+  mangle: true
+  exclude: 
+    - '*.min.js'
+
+hfc_img:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+
+hfc_favicons:
+  enable: false
+  src: img/logo.png
+  target: img/
+  icons:
+    android: true
+    appleIcon: true
+    appleStartup: false
+    coast: false
+    favicons: true
+    firefox: false
+    opengraph: false
+    windows: true
+    yandex: false
+
+# Analytics
+baidu_analytics: 
+google_analytics:
+cnzz_analytics: 1261330472
