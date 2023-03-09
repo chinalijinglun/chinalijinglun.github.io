@@ -43,7 +43,7 @@ jobs:
       #     hexo clean
       #     hexo generate
 
-       - name: Build and Deploy
+      - name: Build and Deploy
         uses: solybum/hexo-deploy@master
         env:
           PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
