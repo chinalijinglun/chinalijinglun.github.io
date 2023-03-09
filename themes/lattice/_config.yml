@@ -9,7 +9,7 @@ layout:
     feature_count: 4
 
 # busuanzi
-busuanzi: false
+busuanzi: true
 
 # baidu push
 baidu_push: true

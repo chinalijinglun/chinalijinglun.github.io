@@ -8,18 +8,20 @@
                 <p>Designed by <a href="https://chinalijinglun.github.io" target="_blank">{{ config.author }}</a> @<a target="_blank" href="http://lijinglun.com">李经纶</a></p>
                 <p>Copyright &copy; {{ moment(Date.now()).year() }}. All Rights Reserved.</p>
                 <p><a href="https://beian.miit.gov.cn/" target="_blank">京ICP备2021030100号-1</a></p>
+
+                {% if theme.busuanzi %}
+                <p>
+                    <span id="busuanzi_container_site_pv">
+                        {{ __('site.pv') }}: <span id="busuanzi_value_site_pv"></span> {{ __('site.pv_unit') }}
+                    </span>
+                    <span id="busuanzi_container_site_uv">
+                        {{ __('site.uv') }}: <span id="busuanzi_value_site_uv"></span> {{ __('site.uv_unit') }}
+                    </span>
+                </p>
+                {% endif %}
             </div>
 
-            {% if theme.busuanzi %}
-            <div style="display:none">
-                <span id="busuanzi_container_site_pv">
-                    {{ __('site.pv') }}: <span id="busuanzi_value_site_pv"></span> {{ __('site.pv_unit') }}
-                </span>
-                <span id="busuanzi_container_site_uv">
-                    {{ __('site.uv') }}: <span id="busuanzi_value_site_uv"></span> {{ __('site.uv_unit') }}
-                </span>
-            </div>
-            {% endif %}
+
 
         </div>
 </footer>
