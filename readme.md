@@ -1,4 +1,5 @@
-### 启动说明
+### 使用说明
+hexo new post 名称
 hexo server
 hexo g
 hexo d
