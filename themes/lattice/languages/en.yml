@@ -13,6 +13,8 @@ menu:
   home: Home
   source: Source
   news: News
+  standard: Standard
+  resume: Resume
 
 button:
   learn_more: Learn More

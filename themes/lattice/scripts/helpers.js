@@ -55,7 +55,7 @@ hexo.extend.helper.register('header_menu', function(className){
     isDefaultLang = lang === 'zh-cn',
     path1 = this.path,
     isActive = function(path0){
-        if(path0 === 'index.html') {
+        if(path0 == 'index.html') {
             return path1 === path0;    
         }
         return (path1.indexOf(path0)!==-1);    
@@ -78,6 +78,7 @@ hexo.extend.helper.register('header_menu', function(className){
     }
     result += '</li>';
   });
+
 
   return result;
 });
