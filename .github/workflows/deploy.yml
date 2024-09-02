@@ -18,6 +18,9 @@ jobs:
   # Single deploy job since we're just deploying
   blog-jinglun:
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v3
