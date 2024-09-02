@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: '12.x'
 
@@ -44,7 +44,7 @@ jobs:
       #     hexo generate
 
       - name: Build and Deploy
-        uses: solybum/hexo-deploy@master
+        uses: peaceiris/actions-gh-pages@v3
         env:
           PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           PUBLISH_REPOSITORY: chinalijinglun/chinalijinglun.github.io # The repository the action should deploy to.
