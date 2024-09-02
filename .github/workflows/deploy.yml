@@ -38,6 +38,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.HEXO_TOKEN }}  # GitHub Token
-          external_repository: chinalijinglun/chinalijinglun.github.io # 目标仓库
+          # external_repository: chinalijinglun/chinalijinglun.github.io # 目标仓库
           publish_branch: master                     # 要推送的分支
           publish_dir: ./public                      # Hexo 生成的文件夹
