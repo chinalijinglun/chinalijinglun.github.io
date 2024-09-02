@@ -24,15 +24,15 @@ jobs:
         with:
           node-version: '12.x'  # 使用较新版本的 Node.js
 
-      # - name: Install hexo dependencies
-      #   run: |
-      #     npm install -g hexo-cli
-      #     npm install
+      - name: Install hexo dependencies
+        run: |
+          npm install -g hexo-cli
+          npm install
 
-      # - name: Generate files
-      #   run: |
-      #     hexo clean
-      #     hexo generate
+      - name: Generate files
+        run: |
+          hexo clean
+          hexo generate
 
       - name: Build and Deploy
         uses: peaceiris/actions-gh-pages@v3
