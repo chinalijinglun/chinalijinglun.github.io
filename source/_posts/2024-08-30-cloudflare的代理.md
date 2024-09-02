@@ -18,7 +18,7 @@ cloudflare账号（必备
 <center>【绑定域名到cloudflare】</center>
 
 - 步骤1：
-  在cloudflare首页中选择添加域
+  在cloudflare首页中选择添加域 
 <img src="1.png" style="transform: scale(0.6)">
 - 步骤2：
   输入你的域名
