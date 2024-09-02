@@ -38,10 +38,12 @@
             {% endif %}
         </div>
 
+        {% include '../common/reward.swig' %} 
+
         {% if post.coeditor %}
-        <div class="post-announce">感谢您的阅读，本文由 <a href="{{ post.coeditor.url }}">{{ post.coeditor.name }}</a> 原创提供。如若转载，请注明出处：李经纶个人博客（<a href="{{ url_for(post.path) }}">https://chinalijinglun.github.io/{{ url_for(post.path) }}</a>）</div> 
+        <div class="post-announce">感谢您的阅读，本文由 <a href="{{ post.coeditor.url }}">{{ post.coeditor.name }}</a> 原创提供。如若转载，请注明出处：李经纶个人博客（<a href="{{ url_for(post.path) }}">https://lijinglun.com/{{ url_for(post.path) }}</a>）</div> 
         {% else %}
-        <div class="post-announce">感谢您的阅读，本文由 <a href="https://chinalijinglun.github.io/">李经纶</a> 版权所有。如若转载，请注明出处：李经纶个人博客（<a href="https://chinalijinglun.github.io/{{ url_for(post.path) }}">https://chinalijinglun.github.io/{{ url_for(post.path) }}</a>）</div> 
+        <div class="post-announce">感谢您的阅读，本文由 <a href="https://lijinglun.com/">李经纶</a> 版权所有。如若转载，请注明出处：李经纶个人博客（<a href="https://lijinglun.com{{ url_for(post.path) }}">https://lijinglun.com{{ url_for(post.path) }}</a>）</div> 
         {% endif %}
         <div class="post-revision">
             <i class="fa fa-clock-o"></i> <time class="post-updated" datetime="{{ date_xml(post.updated) }}">{{ __('post.last_updated', full_date(post.updated)) }}</time>
