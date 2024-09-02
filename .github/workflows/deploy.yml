@@ -49,7 +49,8 @@ jobs:
       - name: Build and Deploy
         uses: peaceiris/actions-gh-pages@v3
         env:
-          PERSONAL_TOKEN: ${{ secrets.HEXO_TOKEN }}
+          # PERSONAL_TOKEN: ${{ secrets.HEXO_TOKEN }}
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
           PUBLISH_REPOSITORY: chinalijinglun/chinalijinglun.github.io # The repository the action should deploy to.
           BRANCH: master  # The branch the action should deploy to.
           PUBLISH_DIR: ./public # The folder the action should deploy.
