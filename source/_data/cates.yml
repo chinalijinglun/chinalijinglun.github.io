@@ -19,9 +19,9 @@
 - text: react开发
   value: react开发
   url: cates/react开发/index.html
-# - text: 体验报告
-#   value: 体验报告
-#   url: cates/体验报告/index.html
+- text: 工具
+  value: 工具
+  url: cates/工具/index.html
 # - text: 资源合集
 #   value: 资源合集
 #   url: cates/资源合集/index.html
