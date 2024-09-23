@@ -20,10 +20,8 @@
                 </p>
                 {% endif %}
             </div>
-
-
-
         </div>
+    </div>
 </footer>
 
 <!-- Scripts -->

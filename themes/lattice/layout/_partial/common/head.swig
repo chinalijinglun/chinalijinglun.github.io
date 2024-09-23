@@ -93,3 +93,13 @@ twitter_site: config.twitter
     window.WechatJSSDKURL = '{{ config.wechat.jssdk_url }}'
 </script>
 {% endif %}
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P6LEG87Z4Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P6LEG87Z4Q');
+</script>
